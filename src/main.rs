@@ -1,3 +1,5 @@
+use std::{collections::HashMap, fs::File, io::Write, str::FromStr, time::Instant};
+
 use anyhow::Result;
 use clap::Parser;
 use solana_client::nonblocking::rpc_client::RpcClient;
@@ -5,11 +7,6 @@ use solana_commitment_config::CommitmentConfig;
 use solana_pubkey::Pubkey;
 use solana_signature::Signature;
 use solana_transaction_status::{EncodedTransaction, UiParsedInstruction, UiTransactionEncoding};
-use std::collections::HashMap;
-use std::fs::File;
-use std::io::Write;
-use std::str::FromStr;
-use std::time::Instant;
 
 #[derive(Parser, Debug)]
 #[command(name = "cranker-expense")]
